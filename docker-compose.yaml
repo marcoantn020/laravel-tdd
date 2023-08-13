@@ -39,12 +39,13 @@ services:
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
-            - "3307:3306"
+            - "3306:3306"
         networks:
             - laravel
 
     queue:
         image: especializati/laravel9-app
+        container_name: queue
         restart: unless-stopped
         command: "php artisan queue:work"
         volumes:

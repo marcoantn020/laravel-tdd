@@ -3,8 +3,10 @@
 namespace App\Repository\Eloquent;
 
 use App\Models\User;
+use App\Repository\Contracts\PaginationInterface;
 use App\Repository\Contracts\UserRepositoryInterface;
 use App\Repository\Exceptions\NotFoundException;
+use App\Repository\Presenters\PaginationPresenter;
 
 class UserRepository implements UserRepositoryInterface
 {
@@ -20,38 +22,50 @@ class UserRepository implements UserRepositoryInterface
         return $this->model->get()->toArray();
     }
 
+    public function paginate(int $page = 1): PaginationInterface
+    {
+        return new PaginationPresenter($this->model->paginate());
+    }
+
     public function create(array $data): object
     {
+        $data['password'] = bcrypt($data['password']);
         return $this->model->create($data);
     }
 
-    public function update(string $email, array $data): object
+    /**
+     * @throws NotFoundException
+     */
+    public function update(string $id, array $data): object
     {
-        if($user = $this->find($email)) {
-            $user->update($data);
-            $user->refresh();
+        if(isset($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
         }
+        $user = $this->find($id);
+        if(!$data) return $user;
+        $user->update($data);
+        $user->refresh();
         return $user;
     }
 
     /**
      * @throws NotFoundException
      */
-    public function delete(string $email): bool
+    public function delete(string $id): void
     {
-        if (!$user = $this->find($email)) {
-            throw new NotFoundException("user not found.");
-        }
+        $user = $this->find($id);
         $user->delete();
-        return true;
     }
 
     /**
      * @throws NotFoundException
      */
-    public function find(string $email): ?object
+    public function find(string $id): object
     {
-        return $this->model->where("email", $email)->first();
-
+        if (!$user = $this->model->find($id)) {
+            throw new NotFoundException(message: "user not found");
+        }
+        return $user;
     }
+
 }
