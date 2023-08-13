@@ -6,7 +6,7 @@
     - test_integration
     - test_E2E
 
-##
+#
 Testes TDD (Desenvolvimento Orientado por Testes, em inglês Test-Driven Development) é uma abordagem de desenvolvimento de software em que os testes são escritos antes mesmo do código de produção. O ciclo básico do TDD envolve três etapas:
 
 - **Red (Vermelho):** Primeiro, você escreve um teste automatizado que define o comportamento desejado do código que você ainda vai implementar. Esse teste inicial deve falhar, pois o código real ainda não existe.
