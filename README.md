@@ -1,66 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Estudando e aplicando TDD com laravel Framework
+##
+### Branchs
+    - master
+    - tests_unit
+    - test_integration
+    - test_E2E
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##
+Testes TDD (Desenvolvimento Orientado por Testes, em inglês Test-Driven Development) é uma abordagem de desenvolvimento de software em que os testes são escritos antes mesmo do código de produção. O ciclo básico do TDD envolve três etapas:
 
-## About Laravel
+- **Red (Vermelho):** Primeiro, você escreve um teste automatizado que define o comportamento desejado do código que você ainda vai implementar. Esse teste inicial deve falhar, pois o código real ainda não existe.
+#
+- **Green (Verde):** Em seguida, você escreve a quantidade mínima de código necessário para fazer o teste passar. O objetivo é fazer o teste funcionar corretamente, mas não se preocupe muito com a qualidade ou eficiência nesse momento.
+#
+- **Refactor (Refatorar):** Depois que o teste estiver passando, você refatora o código para melhorar sua estrutura, clareza, eficiência, etc. Durante essa etapa, você mantém a funcionalidade do código garantindo que todos os testes continuem passando.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Esse ciclo é repetido várias vezes durante o desenvolvimento do software. A ideia por trás do TDD é que, ao escrever testes antes de escrever o código de produção, você obtém uma maior confiança na qualidade do seu código e também melhora a sua arquitetura, já que é incentivado a projetar seu código para ser testável desde o início.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##
 
-## Learning Laravel
+### Testes Unitarios
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Testes unitários são uma prática de teste de software em que partes individuais, chamadas de "unidades", são testadas isoladamente para verificar se funcionam conforme o esperado. Essas unidades geralmente correspondem a funções, métodos ou pequenos componentes de um sistema. O objetivo dos testes unitários é garantir que cada parte do código funcione corretamente individualmente, antes de serem integradas em um sistema completo.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Aqui estão os passos típicos envolvidos na criação e execução de testes unitários:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Identificação da Unidade:** Escolha uma unidade específica de código para testar. Pode ser uma função, método, classe ou até mesmo um componente pequeno.
+#
+2**Isolamento:** Isole a unidade escolhida, fornecendo-lhe os inputs necessários para a execução, sem depender de outras partes do sistema. Isso é feito para garantir que os resultados do teste sejam consistentes.
+#
+3**Escrita do Teste:** Escreva um teste automatizado que define um cenário ou caso de uso para a unidade. Isso envolve a definição dos inputs e a especificação do resultado esperado.
+#
+4**Execução do Teste:** Execute o teste automatizado e verifique se o resultado observado coincide com o resultado esperado. Se o teste falhar, indica que há um problema na unidade testada.
+#
+5**Refatoração (Opcional):** Se necessário, faça alterações na unidade ou no teste para corrigir erros ou melhorar a estrutura do código.
+#
+6**Iteração:** Repita esse processo para outras unidades do código. É comum ter vários testes unitários para diferentes partes do sistema.
+##
 
-## Laravel Sponsors
+### Testes de Integração
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Os testes de integração são uma categoria de testes de software que têm como objetivo verificar a interação e a cooperação entre diferentes componentes ou módulos do sistema quando eles são integrados. Enquanto os testes unitários focam na verificação do funcionamento de unidades individuais de código, os testes de integração lidam com a interação entre essas unidades para garantir que trabalhem em conjunto de maneira harmoniosa.
 
-### Premium Partners
+Os testes de integração podem ser realizados em diferentes níveis de integração:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. **Integração de Componentes:** Nesse nível, os testes se concentram na interação entre módulos ou componentes individuais do sistema. Isso pode envolver a verificação de chamadas de funções, troca de dados e interações entre diferentes classes ou módulos.
+#
+2. **Integração de Serviços:** Nesse nível, os testes visam validar a comunicação e a interação entre serviços independentes ou sistemas externos. Isso é comum em arquiteturas de software baseadas em serviços, como a arquitetura de microsserviços.
+#
+3. **Integração de Sistema:** Nesse nível, os testes abrangem todo o sistema, verificando a interação entre módulos e serviços. O foco é garantir que o sistema como um todo funcione de acordo com os requisitos.
 
-## Contributing
+Os testes de integração são essenciais para garantir que as diferentes partes de um sistema funcionem em conjunto de forma correta e eficaz. Eles ajudam a identificar problemas de comunicação, incompatibilidades e erros de integração que podem surgir quando várias partes do código são combinadas.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+##
 
-## Code of Conduct
+### Testes E2E ou End-to-End (ponta a ponta)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Os testes E2E, ou Testes End-to-End (ponta a ponta), são uma forma de teste de software que visam verificar o fluxo completo de uma aplicação, simulando o comportamento do usuário em um ambiente de produção. Eles testam o sistema como um todo, incluindo a interação entre diferentes componentes, sistemas e até mesmo sistemas externos, para garantir que o software funcione corretamente em um cenário realista.
 
-## Security Vulnerabilities
+Os testes E2E são realizados para simular casos de uso do mundo real, desde a entrada de dados até a saída final, e verificam se todo o fluxo do aplicativo está funcionando conforme o esperado. Eles são especialmente úteis para identificar problemas de integração e falhas que podem ocorrer quando os diferentes componentes interagem.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Aqui estão alguns pontos importantes sobre os testes E2E:
 
-## License
+1. **Ambiente Realista**: Os testes E2E são executados em um ambiente o mais próximo possível do ambiente de produção, o que ajuda a detectar problemas que podem não ser evidentes em ambientes de teste isolados.
+#
+2. **Automação**: Embora os testes E2E possam ser realizados manualmente, eles são frequentemente automatizados usando ferramentas e frameworks específicos, como Selenium, Cypress, Puppeteer, entre outros.
+#
+3. **Cenarios Completos**: Os testes E2E abrangem cenários completos, desde a interação inicial do usuário até a saída final, passando por todas as etapas intermediárias. Isso ajuda a identificar problemas que podem ocorrer ao longo do fluxo completo.
+#
+4. **Complexidade**: Devido à natureza abrangente dos testes E2E, eles podem ser mais complexos e demorados para configurar e executar em comparação com testes unitários ou de integração.
+#
+5. **Manutenção**: Como os testes E2E lidam com o sistema como um todo, eles podem ser sensíveis a alterações na interface do usuário ou na lógica de negócios. Mudanças frequentes podem exigir atualizações frequentes nos testes.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Os testes E2E são uma parte crucial do processo de garantia de qualidade, pois ajudam a garantir que o software funcione corretamente em um ambiente realista e que os diferentes componentes estejam integrados de maneira adequada. No entanto, é importante equilibrar os testes E2E com outros tipos de testes, como testes unitários e de integração, para garantir uma cobertura completa dos diferentes aspectos do software.
+
+
