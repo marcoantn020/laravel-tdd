@@ -1,7 +1,7 @@
 ## Estudando e aplicando TDD com laravel Framework
-##
+#
 ### Branchs
-    - master
+    - master (setup)
     - tests_unit
     - test_integration
     - test_E2E
@@ -46,14 +46,14 @@ Os testes de integração são uma categoria de testes de software que têm como
 Os testes de integração podem ser realizados em diferentes níveis de integração:
 
 1. **Integração de Componentes:** Nesse nível, os testes se concentram na interação entre módulos ou componentes individuais do sistema. Isso pode envolver a verificação de chamadas de funções, troca de dados e interações entre diferentes classes ou módulos.
-#
+
 2. **Integração de Serviços:** Nesse nível, os testes visam validar a comunicação e a interação entre serviços independentes ou sistemas externos. Isso é comum em arquiteturas de software baseadas em serviços, como a arquitetura de microsserviços.
-#
+
 3. **Integração de Sistema:** Nesse nível, os testes abrangem todo o sistema, verificando a interação entre módulos e serviços. O foco é garantir que o sistema como um todo funcione de acordo com os requisitos.
 
 Os testes de integração são essenciais para garantir que as diferentes partes de um sistema funcionem em conjunto de forma correta e eficaz. Eles ajudam a identificar problemas de comunicação, incompatibilidades e erros de integração que podem surgir quando várias partes do código são combinadas.
 
-##
+#
 
 ### Testes E2E ou End-to-End (ponta a ponta)
 
@@ -64,13 +64,13 @@ Os testes E2E são realizados para simular casos de uso do mundo real, desde a e
 Aqui estão alguns pontos importantes sobre os testes E2E:
 
 1. **Ambiente Realista**: Os testes E2E são executados em um ambiente o mais próximo possível do ambiente de produção, o que ajuda a detectar problemas que podem não ser evidentes em ambientes de teste isolados.
-#
+
 2. **Automação**: Embora os testes E2E possam ser realizados manualmente, eles são frequentemente automatizados usando ferramentas e frameworks específicos, como Selenium, Cypress, Puppeteer, entre outros.
-#
+
 3. **Cenarios Completos**: Os testes E2E abrangem cenários completos, desde a interação inicial do usuário até a saída final, passando por todas as etapas intermediárias. Isso ajuda a identificar problemas que podem ocorrer ao longo do fluxo completo.
-#
+
 4. **Complexidade**: Devido à natureza abrangente dos testes E2E, eles podem ser mais complexos e demorados para configurar e executar em comparação com testes unitários ou de integração.
-#
+
 5. **Manutenção**: Como os testes E2E lidam com o sistema como um todo, eles podem ser sensíveis a alterações na interface do usuário ou na lógica de negócios. Mudanças frequentes podem exigir atualizações frequentes nos testes.
 
 Os testes E2E são uma parte crucial do processo de garantia de qualidade, pois ajudam a garantir que o software funcione corretamente em um ambiente realista e que os diferentes componentes estejam integrados de maneira adequada. No entanto, é importante equilibrar os testes E2E com outros tipos de testes, como testes unitários e de integração, para garantir uma cobertura completa dos diferentes aspectos do software.
