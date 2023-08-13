@@ -10,13 +10,12 @@
 Testes TDD (Desenvolvimento Orientado por Testes, em inglês Test-Driven Development) é uma abordagem de desenvolvimento de software em que os testes são escritos antes mesmo do código de produção. O ciclo básico do TDD envolve três etapas:
 
 - **Red (Vermelho):** Primeiro, você escreve um teste automatizado que define o comportamento desejado do código que você ainda vai implementar. Esse teste inicial deve falhar, pois o código real ainda não existe.
-#
+
 - **Green (Verde):** Em seguida, você escreve a quantidade mínima de código necessário para fazer o teste passar. O objetivo é fazer o teste funcionar corretamente, mas não se preocupe muito com a qualidade ou eficiência nesse momento.
-#
+
 - **Refactor (Refatorar):** Depois que o teste estiver passando, você refatora o código para melhorar sua estrutura, clareza, eficiência, etc. Durante essa etapa, você mantém a funcionalidade do código garantindo que todos os testes continuem passando.
 
 Esse ciclo é repetido várias vezes durante o desenvolvimento do software. A ideia por trás do TDD é que, ao escrever testes antes de escrever o código de produção, você obtém uma maior confiança na qualidade do seu código e também melhora a sua arquitetura, já que é incentivado a projetar seu código para ser testável desde o início.
-
 
 ##
 
@@ -27,17 +26,18 @@ Testes unitários são uma prática de teste de software em que partes individua
 Aqui estão os passos típicos envolvidos na criação e execução de testes unitários:
 
 1. **Identificação da Unidade:** Escolha uma unidade específica de código para testar. Pode ser uma função, método, classe ou até mesmo um componente pequeno.
-#
-2**Isolamento:** Isole a unidade escolhida, fornecendo-lhe os inputs necessários para a execução, sem depender de outras partes do sistema. Isso é feito para garantir que os resultados do teste sejam consistentes.
-#
-3**Escrita do Teste:** Escreva um teste automatizado que define um cenário ou caso de uso para a unidade. Isso envolve a definição dos inputs e a especificação do resultado esperado.
-#
-4**Execução do Teste:** Execute o teste automatizado e verifique se o resultado observado coincide com o resultado esperado. Se o teste falhar, indica que há um problema na unidade testada.
-#
-5**Refatoração (Opcional):** Se necessário, faça alterações na unidade ou no teste para corrigir erros ou melhorar a estrutura do código.
-#
+
+2. **Isolamento:** Isole a unidade escolhida, fornecendo-lhe os inputs necessários para a execução, sem depender de outras partes do sistema. Isso é feito para garantir que os resultados do teste sejam consistentes.
+
+3. **Escrita do Teste:** Escreva um teste automatizado que define um cenário ou caso de uso para a unidade. Isso envolve a definição dos inputs e a especificação do resultado esperado.
+
+4. **Execução do Teste:** Execute o teste automatizado e verifique se o resultado observado coincide com o resultado esperado. Se o teste falhar, indica que há um problema na unidade testada.
+
+5. **Refatoração (Opcional):** Se necessário, faça alterações na unidade ou no teste para corrigir erros ou melhorar a estrutura do código.
+
 6**Iteração:** Repita esse processo para outras unidades do código. É comum ter vários testes unitários para diferentes partes do sistema.
-##
+
+#
 
 ### Testes de Integração
 
